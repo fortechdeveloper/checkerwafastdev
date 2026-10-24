@@ -1,2 +1,0 @@
-# checkerwafastdev
-hello im fastdev
