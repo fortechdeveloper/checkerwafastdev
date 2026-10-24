@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cek Massal Nomor WhatsApp</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Cek Massal Nomor WhatsApp</h1>
+            <p class="subtitle">Tempel daftar nomor (satu per baris) atau upload CSV. Mendukung nomor Indonesia dan internasional.</p>
+        </header>
+
+        <section id="status-section" class="card">
+            <div class="status-row">
+                <span id="status-dot" class="dot pending"></span>
+                <span id="status-text">Memeriksa koneksi ke engine validasi...</span>
+            </div>
+            <p id="status-hint" class="hint hidden"></p>
+        </section>
+
+        <section id="input-section" class="card">
+            <label for="numbers-input">Daftar Nomor</label>
+            <textarea id="numbers-input" rows="10" placeholder="Contoh:&#10;6281234567890&#10;+6289876543210&#10;14155551234&#10;447911123456"></textarea>
+            <div class="input-actions">
+                <button id="btn-check" class="btn primary">Mulai Cek</button>
+                <button id="btn-clear" class="btn secondary">Bersihkan</button>
+                <label class="btn secondary file-label">
+                    Upload CSV
+                    <input type="file" id="csv-file" accept=".csv,.txt" hidden />
+                </label>
+            </div>
+            <p class="hint">Frontend otomatis membagi batch besar menjadi chunk 100 nomor untuk diproses.</p>
+        </section>
+
+        <section id="progress-section" class="card hidden">
+            <div class="progress-header">
+                <span>Progress</span>
+                <span id="progress-text">0 / 0</span>
+            </div>
+            <div class="progress-bar">
+                <div id="progress-fill" class="progress-fill"></div>
+            </div>
+            <p id="progress-note" class="hint"></p>
+        </section>
+
+        <section id="results-section" class="card hidden">
+            <div class="results-header">
+                <h2>Hasil Pengecekan</h2>
+                <button id="btn-export" class="btn secondary">Export CSV</button>
+            </div>
+            <div class="stats-row" id="stats-row"></div>
+            <div class="table-wrapper">
+                <table id="results-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Input</th>
+                            <th>Nomor</th>
+                            <th>Status</th>
+                            <th>Keterangan</th>
+                        </tr>
+                    </thead>
+                    <tbody id="results-body"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <footer>
+            <p>Gunakan dengan bijak.</p>
+        </footer>
+    </div>
+
+    <script src="/app.js"></script>
+</body>
+</html>
