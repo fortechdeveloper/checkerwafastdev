@@ -1,0 +1,17 @@
+{
+  "name": "wa-bulk-checker",
+  "version": "2.0.0",
+  "description": "Bulk WhatsApp number checker (Vercel serverless + Apify)",
+  "private": true,
+  "scripts": {
+    "dev": "vercel dev",
+    "deploy": "vercel --prod"
+  },
+  "engines": {
+    "node": "20.x"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "vercel": "^37.0.0"
+  }
+}
